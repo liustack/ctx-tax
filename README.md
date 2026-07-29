@@ -6,6 +6,8 @@ Agent skills, CLAUDE.md files, rules, and session hooks all load into your agent
 
 ```bash
 npx @liustack/ctx-tax
+# or straight from the repo, no npm needed:
+npx github:liustack/ctx-tax
 ```
 
 ```

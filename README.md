@@ -13,19 +13,19 @@ npx github:liustack/ctx-tax
 ```
 Every session, before your first word:
 
-  skill descriptions (18 skills)               1,801
-  ~/.claude/CLAUDE.md                          1,889
-  ./AGENTS.md                                  1,093
-  ~/.claude/rules (2 files)                    1,044
+  skill descriptions (20 skills)                  2k
+  ~/.claude/CLAUDE.md                           1.9k
+  ~/.codex/AGENTS.md                            2.6k
+  ~/.claude/rules (2 files)                       1k
   ──────────────────────────────────────────────────
-  always-on total                              7,551  = 0.8% of Claude Code 1M · 2.9% of Codex ~258k effective
+  always-on total                               7.6k  = 0.8% of Claude Code 1M · 2.9% of Codex ~258k effective
 
 When a skill fires (top by max):
 
   skill                               on trigger   max w/ references
-  ppt-master                              19,006             301,439
-  vercel-react-best-practices              1,782              56,106
-  claude-api                               4,527              43,850
+  ppt-master                                 19k                301k
+  vercel-react-best-practices               1.8k                 56k
+  claude-api                                4.5k                 44k
   ...
 ```
 

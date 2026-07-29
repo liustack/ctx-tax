@@ -1,0 +1,12 @@
+{
+  "name": "ctx-tax",
+  "version": "0.1.0",
+  "description": "Every skill you install charges rent in every session. ctx-tax shows your agent's context bill.",
+  "bin": { "ctx-tax": "bin/ctx-tax.js" },
+  "files": ["bin"],
+  "engines": { "node": ">=18" },
+  "repository": "github:liustack/ctx-tax",
+  "keywords": ["claude-code", "agent-skills", "context-window", "tokens", "codex"],
+  "author": "liustack",
+  "license": "MIT"
+}

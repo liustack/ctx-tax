@@ -6,7 +6,10 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 
-const WINDOWS = [["Claude Code 1M", 1_000_000], ["Codex 400k", 400_000]];
+// Codex advertises 400k (5.5) and 1.05M (5.6), but the app caps both at a
+// 272k catalog entry with a 95% compaction threshold, and past 272k input
+// you pay the higher-usage band. Without extra credits, ~258k is the wall.
+const WINDOWS = [["Claude Code 1M", 1_000_000], ["Codex ~258k effective", 258_400]];
 const CJK = /[　-ヿ㐀-鿿豈-﫿＀-￯]/g;
 
 function tokens(text) {

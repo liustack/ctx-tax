@@ -1,6 +1,6 @@
 {
   "name": "@liustack/ctx-tax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Every skill you install charges rent in every session. ctx-tax shows your agent's context bill.",
   "bin": { "ctx-tax": "bin/ctx-tax.js" },
   "files": ["bin"],

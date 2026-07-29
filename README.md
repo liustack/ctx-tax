@@ -18,7 +18,7 @@ Every session, before your first word:
   ./AGENTS.md                                  1,093
   ~/.claude/rules (2 files)                    1,044
   ──────────────────────────────────────────────────
-  always-on total                              7,551  = 0.8% of Claude Code 1M · 1.9% of Codex 400k
+  always-on total                              7,551  = 0.8% of Claude Code 1M · 2.9% of Codex ~258k effective
 
 When a skill fires (top by max):
 
@@ -40,7 +40,7 @@ Run it from a project directory to include that project's `.claude/skills`, `CLA
 
 `./.claude/skills`, `~/.claude/skills`, `~/.agents/skills`, `~/.codex/skills` (one copy per skill name, priority in that order), `CLAUDE.md` and `AGENTS.md` (global and project, Claude Code and Codex), `.claude/rules`, and it flags `SessionStart` hooks in settings, which inject extra unmeasured context each session.
 
-Percentages are shown against the windows the two harnesses actually run: Claude Code's 1M and Codex's 400k.
+Percentages are shown against the windows the two harnesses actually run: Claude Code's 1M, and Codex's ~258k effective (the app caps GPT-5.5 and 5.6 at a 272k catalog entry with a 95% compaction threshold, whatever the model page advertises).
 
 ## The ruler
 

@@ -6,7 +6,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 
-const WINDOW = 200_000;
+const WINDOWS = [["Claude Code 1M", 1_000_000], ["Codex 400k", 400_000]];
 const CJK = /[　-ヿ㐀-鿿豈-﫿＀-￯]/g;
 
 function tokens(text) {
@@ -107,6 +107,7 @@ function collectMemory(cwd, home) {
   const rows = [];
   const candidates = [
     ["~/.claude/CLAUDE.md", path.join(home, ".claude", "CLAUDE.md")],
+    ["~/.codex/AGENTS.md", path.join(home, ".codex", "AGENTS.md")],
     ["./CLAUDE.md", path.join(cwd, "CLAUDE.md")],
     ["./AGENTS.md", path.join(cwd, "AGENTS.md")],
   ];
@@ -159,6 +160,7 @@ function main() {
     path.join(cwd, ".claude", "skills"),
     path.join(home, ".claude", "skills"),
     path.join(home, ".agents", "skills"),
+    path.join(home, ".codex", "skills"),
   ]);
   const memory = collectMemory(cwd, home);
   const hooks = detectSessionHooks(cwd, home);
@@ -181,8 +183,8 @@ function main() {
     console.log(`  SessionStart hook in ${h}`.padEnd(44) + "  +? (injects unmeasured extra context)");
   }
   console.log("  " + "─".repeat(50));
-  const pct = ((alwaysOn / WINDOW) * 100).toFixed(1);
-  console.log(`  always-on total`.padEnd(44) + fmt(alwaysOn).padStart(8) + `  = ${pct}% of a 200k window\n`);
+  const pcts = WINDOWS.map(([label, w]) => `${((alwaysOn / w) * 100).toFixed(1)}% of ${label}`).join(" · ");
+  console.log(`  always-on total`.padEnd(44) + fmt(alwaysOn).padStart(8) + `  = ${pcts}\n`);
 
   const top = [...skills].sort((a, b) => b.max - a.max).slice(0, 15);
   if (top.length) {

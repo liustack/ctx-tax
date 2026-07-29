@@ -18,7 +18,7 @@ Every session, before your first word:
   ./AGENTS.md                                  1,093
   ~/.claude/rules (2 files)                    1,044
   ──────────────────────────────────────────────────
-  always-on total                              5,873  = 2.9% of a 200k window
+  always-on total                              7,551  = 0.8% of Claude Code 1M · 1.9% of Codex 400k
 
 When a skill fires (top by max):
 
@@ -32,13 +32,15 @@ When a skill fires (top by max):
 Two tiers, because that is how the cost actually lands:
 
 - **Always-on**: skill descriptions, memory files, and rules that every single session carries, whether they get used or not.
-- **When a skill fires**: what one invocation loads (the skill body), and the worst case with every reference file pulled in. A skill whose max exceeds your context window is a skill that cannot fully load.
+- **When a skill fires**: what one invocation loads (the skill body), and the worst case with every reference file pulled in. A skill whose max rivals the window is a skill that crowds out the actual work.
 
 Run it from a project directory to include that project's `.claude/skills`, `CLAUDE.md`, and `AGENTS.md`.
 
 ## What it scans
 
-`./.claude/skills`, `~/.claude/skills`, `~/.agents/skills` (one copy per skill name, priority in that order), `CLAUDE.md` and `AGENTS.md`, `.claude/rules`, and it flags `SessionStart` hooks in settings, which inject extra unmeasured context each session.
+`./.claude/skills`, `~/.claude/skills`, `~/.agents/skills`, `~/.codex/skills` (one copy per skill name, priority in that order), `CLAUDE.md` and `AGENTS.md` (global and project, Claude Code and Codex), `.claude/rules`, and it flags `SessionStart` hooks in settings, which inject extra unmeasured context each session.
+
+Percentages are shown against the windows the two harnesses actually run: Claude Code's 1M and Codex's 400k.
 
 ## The ruler
 

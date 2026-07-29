@@ -196,7 +196,7 @@ function main() {
   }
 
   console.log("Ruler: ascii/4 + CJK chars, identical for everything. Locale twins excluded from max.");
-  console.log("npx ctx-tax · by liustack · github.com/liustack/ctx-tax\n");
+  console.log("npx @liustack/ctx-tax · by liustack · github.com/liustack/ctx-tax\n");
 }
 
 main();

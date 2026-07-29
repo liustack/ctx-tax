@@ -5,7 +5,7 @@
 Agent skills, CLAUDE.md files, rules, and session hooks all load into your agent's context before you type your first word. That is paid attention: it shapes behavior, crowds out your actual work, and nobody itemizes it. `ctx-tax` does.
 
 ```bash
-npx ctx-tax
+npx @liustack/ctx-tax
 ```
 
 ```
